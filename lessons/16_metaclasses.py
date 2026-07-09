@@ -77,8 +77,10 @@ def _demo() -> None:
     # The metaclass registered the concrete plugin and enforced the run() rule.
     assert PluginMeta.registry == {"summarizer": Summarizer}
     try:
+
         class Broken(Plugin):  # no run() -> metaclass rejects it at creation time
             pass
+
         raise AssertionError("should have failed")
     except TypeError as e:
         assert "run()" in str(e)

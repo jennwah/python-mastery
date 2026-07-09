@@ -3,10 +3,7 @@ name = "python-mastery"
 version = "0.1.0"
 description = "Modern Python 3 mastery for AI engineers — runnable lessons + interview prep."
 requires-python = ">=3.12"
-dependencies = [
-    "numpy>=2.0",
-    "pydantic>=2.7",
-]
+dependencies = ["numpy>=2.0", "pydantic>=2.7"]
 
 [dependency-groups]
 dev = ["pytest>=8", "ruff>=0.5", "mypy>=1.10"]

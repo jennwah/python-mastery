@@ -37,6 +37,7 @@ def timed(fn: Callable[P, R]) -> Callable[P, R]:  # noqa: UP047  (ParamSpec on p
         finally:
             wrapper.calls += 1  # type: ignore[attr-defined]
             _ = time.perf_counter() - start
+
     wrapper.calls = 0  # type: ignore[attr-defined]
     return wrapper
 
@@ -55,7 +56,9 @@ def retry(  # noqa: UP047
                 except exceptions as e:
                     last = e
             raise last  # type: ignore[misc]
+
         return wrapper
+
     return decorator
 
 

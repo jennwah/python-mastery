@@ -58,6 +58,7 @@ def handler(kind: str) -> Callable[[Callable[..., str]], Callable[..., str]]:
     def deco(fn: Callable[..., str]) -> Callable[..., str]:
         _HANDLERS[kind] = fn
         return fn
+
     return deco
 
 
